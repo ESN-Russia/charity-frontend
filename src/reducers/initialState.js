@@ -4,6 +4,8 @@ export default {
       id: 1,
       name: "Moscow Metro Tour",
       baseCost: 100,
+      author: "Ira Klimova",
+      ends: "2018-09-12 22:00:00",
       description:
         "Where is the secret Metro 2? How deep is the Moscow metro? And where did Stalin give his speech in November 1941? Join out Metro tour and find out!",
       imageUrl:
@@ -14,6 +16,8 @@ export default {
       id: 2,
       name: "Moscow Metro Tour",
       baseCost: 50,
+      author: "Ira Klimova",
+      ends: "2018-09-13 22:00:00",
       description:
         "Where is the secret Metro 2? How deep is the Moscow metro? And where did Stalin give his speech in November 1941? Join out Metro tour and find out!",
       imageUrl:
@@ -23,6 +27,8 @@ export default {
       id: 3,
       name: "Moscow Metro Tour",
       baseCost: 200,
+      author: "Ira Klimova",
+      ends: "2018-09-14 22:00:00",
       description:
         "Where is the secret Metro 2? How deep is the Moscow metro? And where did Stalin give his speech in November 1941? Join out Metro tour and find out!",
       imageUrl:
@@ -32,6 +38,8 @@ export default {
       id: 4,
       name: "Moscow Metro Tour",
       baseCost: 1000,
+      author: "Ira Klimova",
+      ends: "2018-09-15 22:00:00",
       description:
         "Where is the secret Metro 2? How deep is the Moscow metro? And where did Stalin give his speech in November 1941? Join out Metro tour and find out!",
       imageUrl:
@@ -41,6 +49,8 @@ export default {
       id: 5,
       name: "Moscow Metro Tour",
       baseCost: 250,
+      author: "Ira Klimova",
+      ends: "2018-09-15 22:00:00",
       description:
         "Where is the secret Metro 2? How deep is the Moscow metro? And where did Stalin give his speech in November 1941? Join out Metro tour and find out!",
       imageUrl:

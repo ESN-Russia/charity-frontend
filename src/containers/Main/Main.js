@@ -1,18 +1,32 @@
-import React from "react";
-import _ from "lodash";
-import styled from "styled-components";
+import React, { Fragment } from "react";
 
-import { Container, Segment, Header, Image, Grid, Card } from "semantic-ui-react";
+import { Container, Segment, Header } from "semantic-ui-react";
 
 import MainLots from "./MainLots";
 
 const Main = () => (
-  <Segment>
-    <Container>
-      <Header as="h1">ESN Charity Auction</Header>
-      <MainLots />
-    </Container>
-  </Segment>
+  <Fragment>
+    <Segment vertical inverted color="pink">
+      <Container text>
+        <Header
+          as="h1"
+          style={{
+            fontSize: "3em",
+            paddingTop: "1.5em",
+            paddingBottom: "0.5em",
+            color: "white",
+          }}
+        >
+          ESN Charity Auction
+        </Header>
+      </Container>
+    </Segment>
+    <Segment vertical padded="very">
+      <Container>
+        <MainLots />
+      </Container>
+    </Segment>
+  </Fragment>
 );
 
 export default Main;

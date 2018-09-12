@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
-import styled from "styled-components";
 
-import { Container, Segment, Header, Image, Grid, Card } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 
 import Offer from "../../components/Offer";
+import LotModal from "./LotModal";
 
 class MainLots extends Component {
   state = { selected: null };
@@ -24,6 +24,9 @@ class MainLots extends Component {
 
     return (
       <Card.Group centered>
+        {selected !== null && (
+          <LotModal lotId={selected} closeModal={() => this.setState({ selected: null })} />
+        )}
         {_.map(lots, lot => (
           <Offer
             offer={lot}
