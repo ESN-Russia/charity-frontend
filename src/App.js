@@ -7,6 +7,12 @@ import Main from "./containers/Main/Main";
 class App extends Component {
   state = {}; // FIXME
 
+  componentDidMount() {
+    setTimeout(() => {
+      document.getElementById("async_loader").style.display = "none";
+    }, 1000);
+  }
+
   render() {
     return (
       <div className="App">
