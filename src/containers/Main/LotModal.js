@@ -26,7 +26,7 @@ class LotModal extends Component {
           <Grid stackable>
             <Grid.Row>
               <Grid.Column width={6}>
-                <Image src={lot.imageUrl} />
+                <Image src={lot.image_url} />
               </Grid.Column>
               <Grid.Column width={10}>
                 <Header
@@ -34,7 +34,7 @@ class LotModal extends Component {
                   style={{ color: "white", fontSize: "3em", marginBottom: 0 }}
                 />
                 <Header
-                  content={`${lot.author}  ||  ends ${moment(lot.ends).fromNow()}`}
+                  content={`${lot.seller}  ||  ends ${moment(lot.end_time).fromNow()}`}
                   style={{
                     marginTop: -2,
                     marginBottom: 20,
@@ -48,7 +48,7 @@ class LotModal extends Component {
           </Grid>
           <Segment inverted padded style={{ marginTop: 40 }}>
             <Header as="h1" style={{ color: "white" }}>
-              <span style={{ fontWeight: 400 }}>Current bet:</span> {lot.baseCost} ₽
+              <span style={{ fontWeight: 400 }}>Current bet:</span> {lot.minimum_bid} ₽
             </Header>
             <Input
               fluid
@@ -60,7 +60,7 @@ class LotModal extends Component {
                 icon: "rub",
                 content: "Make your bet",
               }}
-              defaultValue={lot.baseCost + 100}
+              defaultValue={lot.minimum_bid + 100}
             />
           </Segment>
         </Modal.Content>

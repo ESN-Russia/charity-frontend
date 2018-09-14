@@ -11,6 +11,8 @@ import App from "./App";
 import { unregister } from "./registerServiceWorker";
 import store from "./reducers/store";
 
+import { fetchLots } from "./actions";
+
 unregister(); // WTF
 
 ReactDOM.render(
@@ -21,6 +23,8 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root"),
 );
+
+fetchLots();
 
 if (module.hot) {
   module.hot.accept();
