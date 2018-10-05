@@ -3,9 +3,12 @@ import React, { Fragment } from "react";
 import { Container, Segment, Header } from "semantic-ui-react";
 
 import MainLots from "./MainLots";
+import LeftBar from "../LeftBar/LeftBar";
 
 const Main = () => (
   <Fragment>
+    <LeftBar />
+
     <Segment vertical inverted color="pink">
       <Container text>
         <Header

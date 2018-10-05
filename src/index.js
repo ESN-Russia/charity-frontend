@@ -24,7 +24,9 @@ ReactDOM.render(
   document.getElementById("root"),
 );
 
-fetchLots();
+fetchLots().then(() => {
+  document.getElementById("async_loader").style.display = "none";
+});
 
 if (module.hot) {
   module.hot.accept();

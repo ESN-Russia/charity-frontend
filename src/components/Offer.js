@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import moment from "moment";
 
 import { Card, Image, Statistic } from "semantic-ui-react";
