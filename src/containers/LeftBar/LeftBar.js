@@ -7,8 +7,7 @@ import LeftBarNoAuth from "./LeftBarNoAuth";
 import LeftBarAuthed from "./LeftBarAuthed";
 
 const LeftBar = ({ isLoggedIn }) => (
-  <Sidebar as={Menu} animation="overlay" icon="labeled" inverted vertical visible width="thin">
-    <Menu.Item>{isLoggedIn ? "logged in" : "logged out"}</Menu.Item>
+  <Sidebar as={Menu} animation="overlay" icon="labeled" inverted vertical visible width="small">
     {isLoggedIn ? <LeftBarAuthed /> : <LeftBarNoAuth />}
   </Sidebar>
 );

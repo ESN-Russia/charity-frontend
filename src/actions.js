@@ -1,4 +1,5 @@
 import axios from "axios";
+import _ from "lodash";
 
 const API_URL = process.env.REACT_APP_API_URL || "//esnrussia-charity.herokuapp.com";
 
@@ -11,14 +12,41 @@ const apiPost = (url, data) =>
   axios.post(`${API_URL}/api/${url}`, data, { headers: getAuthHeader() });
 
 export const fetchLots = async () => {
-  const res = await apiGet("lot-list/");
+  try {
+    const res = await apiGet("lot-list/");
 
-  console.log("ASDBG fetchLots", res.data);
+    console.log("ASDBG fetchLots", res.data);
 
-  window.store.dispatch({
-    type: "FETCHED_LOTS",
-    lots: res.data,
-  });
+    window.store.dispatch({
+      type: "FETCHED_LOTS",
+      lots: res.data,
+    });
+  } catch (error) {
+    console.log("ASDBG fetchLots", error.response);
+    if (error.response.status === 401) {
+      window.store.dispatch({ type: "USER_LOGOUT" }).then(() => fetchLots());
+    }
+  }
+};
+
+export const fetchUserInfo = async () => {
+  apiGet("auth/info/")
+    .then(res =>
+      window.store.dispatch({
+        type: "USER_FETCHED",
+        user: res.data,
+      }))
+    .catch(err => console.warn("ASDBG userinfo falied", err.response));
+};
+
+export const fetchUserBids = async () => {
+  apiGet("bids/")
+    .then(res =>
+      window.store.dispatch({
+        type: "BIDS_FETCHED",
+        bids: _.orderBy(res.data, "created_at"),
+      }))
+    .catch(err => console.warn("ASDBG fetchUserBids", err.response));
 };
 
 export const login = async (username, password) => {

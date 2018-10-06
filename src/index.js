@@ -11,7 +11,7 @@ import App from "./App";
 import { unregister } from "./registerServiceWorker";
 import store from "./reducers/store";
 
-import { fetchLots } from "./actions";
+import { fetchLots, fetchUserInfo, fetchUserBids } from "./actions";
 
 unregister(); // WTF
 
@@ -24,7 +24,7 @@ ReactDOM.render(
   document.getElementById("root"),
 );
 
-fetchLots().then(() => {
+Promise.all([fetchLots(), fetchUserInfo(), fetchUserBids()]).then(() => {
   document.getElementById("async_loader").style.display = "none";
 });
 
