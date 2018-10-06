@@ -72,3 +72,7 @@ export const logout = async () => {
     })
     .catch(err => console.log("ASDBG err", err.response));
 };
+
+export const register = async (username, name) => apiPost("auth/register/", { username, name });
+
+export const resetPassword = async username => apiPost("auth/reset_password/", { username });

@@ -3,4 +3,5 @@ export default {
   lots: [],
   user: {},
   bids: [],
+  registerModal: null,
 };
