@@ -27,12 +27,16 @@ class LeftBarNoAuth extends Component {
             <Form.Input
               label="Email"
               value={username}
+              disabled={isLoading}
+              loading={isLoading}
               onChange={(e, { value }) => this.setState({ username: value })}
             />
             <Form.Input
-              label="password"
+              label="Password"
               type="password"
               value={password}
+              loading={isLoading}
+              disabled={isLoading}
               onChange={(e, { value }) => this.setState({ password: value })}
             />
             <Form.Button
@@ -50,6 +54,7 @@ class LeftBarNoAuth extends Component {
             size="small"
             basic
             inverted
+            disabled={isLoading}
             onClick={() => window.store.dispatch({ type: "SHOW_REGISTER" })}
           >
             I don&#39;t have an account
@@ -60,6 +65,7 @@ class LeftBarNoAuth extends Component {
             size="small"
             basic
             inverted
+            disabled={isLoading}
             onClick={() => window.store.dispatch({ type: "SHOW_PASSWORD_RESTORE" })}
           >
             I forgot my password

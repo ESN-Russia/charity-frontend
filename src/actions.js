@@ -49,7 +49,7 @@ export const fetchUserBids = async () => {
     .catch(err => console.warn("ASDBG fetchUserBids", err.response));
 };
 
-export const login = async (username, password) => {
+export const login = async (username, password) =>
   apiPost("auth/login/", { username, password })
     .then((res) => {
       console.log("ASDBG res", res);
@@ -58,9 +58,9 @@ export const login = async (username, password) => {
         token: res.data.token,
         user: res.data.user,
       });
+      fetchUserBids();
     })
     .catch(err => console.log("ASDBG err", err.response));
-};
 
 export const logout = async () => {
   apiPost("auth/logout/", {})
